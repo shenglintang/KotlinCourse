@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.lin.kotlincourse">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".BasicGrammar">
+        </activity>
+        <activity android:name=".DataType">
+        </activity>
+        <activity android:name=".ConditionControl">
+        </activity>
+        <activity android:name=".CycleControl">
+        </activity>
+        <activity android:name=".ClassAndObject">
+        </activity>
+        <activity android:name=".Inherit">
+        </activity>
+        <activity android:name=".InterFaceAc">
+        </activity>
+        <activity android:name=".Extend">
+        </activity>
+        <activity android:name=".DataClassAndSeaClass">
+        </activity>
+        <activity android:name=".GenericParadigm">
+        </activity>
+        <activity android:name=".EnumClass">
+        </activity>
+        <activity android:name=".ObjectExpressionsAndObjectDeclarations">
+        </activity>
+        <activity android:name=".Entrust">
+        </activity>
+    </application>
+
+</manifest>
