@@ -9,19 +9,6 @@ import android.util.Log
  *
  */
 class ClassAndObject : AppCompatActivity() {
-    //Koltin 中的类可以有一个 主构造器，以及一个或多个次构造器，主构造器是类头部的一部分，位于类名称之后:
-    //主构造器只能含有init关键字作为前缀的初始化代码，不能含有其他代码
-    class ClassAndObject constructor(name: String,age: Int) {
-        init {
-            Log.e("lin", " constructor name is $name ")
-            Log.e("lin", " constructor age is $age ")
-        }
-
-    }
-
-    //如果主构造器没有任何注解，也没有任何可见度修饰符，那么constructor关键字可以省略。
-    //class ClassAndObject (name: String,age: Int) {}
-
     /**
      * getter和setter
      * kotlin中类不能有字段，提供了 Backing Fields(后端变量) 机制，
@@ -32,18 +19,38 @@ class ClassAndObject : AppCompatActivity() {
         set(value) {
             if (value == 1) {
                 field = 100
+            } else {
+                field = value
             }
         }
     var name: String = "Lin"
         get() = field.toUpperCase()//后端变量
-        set(value) {
-            if (value.equals("tom")) {
-                field = "tom"
-            }
-        }
 
     //非空属性必须在定义的时候初始化，kotlin提供了lateinit关键字来延迟初始化
     lateinit var basicGrammar: BasicGrammar
+
+    /**
+     * 构造器
+     * Koltin 中的类可以有一个 主构造器，以及一个或多个次构造器，主构造器是类头部的一部分，位于类名称之后:
+     * 如果主构造器没有任何注解，也没有任何可见度修饰符，那么constructor关键字可以省略。
+     */
+    class ClassAndObject constructor(name: String, age: Int) {
+        var age = 1
+        var name = "lin"
+
+        init {
+            Log.e("lin", " constructor name is $name ")
+            Log.e("lin", " constructor age is $age ")
+        }
+
+        fun text1() {
+
+        }
+
+        constructor(name: String, age: Int) : this(name, age) {
+        }
+    }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,8 +59,8 @@ class ClassAndObject : AppCompatActivity() {
         basicGrammar = BasicGrammar()
     }
 
-    fun text1() {
-
+    fun text2() {
+        Log.e("lin", " text2 ")
     }
 
 }

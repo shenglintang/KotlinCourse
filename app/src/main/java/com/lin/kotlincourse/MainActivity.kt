@@ -3,7 +3,6 @@ package com.lin.kotlincourse
 import android.app.ListActivity
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.ListView
@@ -47,11 +46,12 @@ class MainActivity : ListActivity() {
         super.onCreate(savedInstanceState)
         listAdapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, mTitles)
         var classAndObject = ClassAndObject()
-        classAndObject.age =1
-        classAndObject.name = "tom"
-        Log.e("lin", "age is ${classAndObject.age} ")
-        Log.e("lin", "age is ${classAndObject.name} ")
-
+        classAndObject.age =2
+        classAndObject.name = "tomdd"
+//        Log.e("lin", "age is ${classAndObject.age} ")
+//        Log.e("lin", "age is ${classAndObject.name} ")
+      val classAndObject2 = ClassAndObject.ClassAndObject("lin",12)
+        classAndObject2.text1()
     }
 
     override fun onListItemClick(l: ListView, v: View, position: Int, id: Long) {
