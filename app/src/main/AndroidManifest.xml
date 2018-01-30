@@ -30,7 +30,7 @@
         </activity>
         <activity android:name=".InterFaceAc">
         </activity>
-        <activity android:name=".Extend">
+        <activity android:name=".expand">
         </activity>
         <activity android:name=".DataClassAndSeaClass">
         </activity>

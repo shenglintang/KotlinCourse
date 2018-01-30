@@ -16,7 +16,7 @@ class MainActivity : ListActivity() {
             ClassAndObject::class.java!!.simpleName,
             Inherit::class.java!!.simpleName,
             InterFaceAc::class.java!!.simpleName,
-            Extend::class.java!!.simpleName,
+            expand::class.java!!.simpleName,
             DataClassAndSeaClass::class.java!!.simpleName,
             GenericParadigm::class.java!!.simpleName,
             EnumClass::class.java!!.simpleName,
@@ -33,7 +33,7 @@ class MainActivity : ListActivity() {
             ClassAndObject::class.java,
             Inherit::class.java,
             InterFaceAc::class.java,
-            Extend::class.java,
+            expand::class.java,
             DataClassAndSeaClass::class.java,
             GenericParadigm::class.java,
             EnumClass::class.java,
@@ -50,10 +50,15 @@ class MainActivity : ListActivity() {
         classAndObject.name = "tomdd"
 //        Log.e("lin", "age is ${classAndObject.age} ")
 //        Log.e("lin", "age is ${classAndObject.name} ")
-      val classAndObject2 = ClassAndObject.ClassAndObject("lin",12)
-        classAndObject2.text1()
-    }
+//      val classAndObject2 = ClassAndObject.ClassAndObject("lin",12)
+//        classAndObject2.text1()
+        val classAndObject3 = ClassAndObject.ClassAndObject("ALLEN",11,1)
 
+
+    }
+fun usage(user: User){
+    user.log()
+}
     override fun onListItemClick(l: ListView, v: View, position: Int, id: Long) {
         startActivity(Intent(this, mActivities[position]))
     }
