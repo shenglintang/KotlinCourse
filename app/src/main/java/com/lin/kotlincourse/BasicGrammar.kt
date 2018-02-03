@@ -7,7 +7,19 @@ import android.util.Log
 /**
  * 基础语法
  */
+//声明常量 必须在top-level和object中。
+const val name = "lin"
+
 class BasicGrammar : AppCompatActivity() {
+
+    //@JvmField 也可以声明常量
+    @JvmField
+    val sex = 0
+
+    //声明常量 必须在top-level和object中。
+    companion object {
+        const val age = 1
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -70,7 +82,9 @@ class BasicGrammar : AppCompatActivity() {
         var b: String = "b"
         val c = false
 //        c =true //c不可变量此段编译不过
+
     }
+
     /**
      * 字符串模板
      * $表示一个变量名或者变量值
@@ -80,27 +94,29 @@ class BasicGrammar : AppCompatActivity() {
     fun textFun8() {
         var a = 1
         Log.e("lin", "a is $a")
-        Log.e("lin", "textFun4 is ${textFun4(1,2)}")
+        Log.e("lin", "textFun4 is ${textFun4(1, 2)}")
     }
+
     /**
      * NULL检查机制
      * kotlin特性之一 对空指针的处理有两种方式
      * 1、字段后面加!!则抛异常
      * 2、字段后加？表示可为空或者配合？：做空处理
      */
-    fun textFun9(){
-        var a :String? = "1"
-        Log.e("lin","a is $a")
-        var b :String = "1"
+    fun textFun9() {
+        var a: String? = "1"
+        Log.e("lin", "a is $a")
+        var b: String = "1"
 //        b= null//编译不通过
 
         a = null
         var c = a?.toInt()//可为空
-        Log.e("lin","c is $c")
+        Log.e("lin", "c is $c")
 
         var d = a?.toInt() ?: "3"//为空则默认为3
-        Log.e("lin","d is $d")
+        Log.e("lin", "d is $d")
     }
+
     /**
      * 区间
      * 操作符 a..b 表示从a到b 包含两端
@@ -108,18 +124,18 @@ class BasicGrammar : AppCompatActivity() {
      * until 函数排除结束元素
      * downTo 与..相反
      */
-    fun textFun10(){
-        for (i in 1..4){
-            Log.e("lin","i = $i")
+    fun textFun10() {
+        for (i in 1..4) {
+            Log.e("lin", "i = $i")
         }
-        for (i in 1..4 step 2){
-            Log.e("lin","i = $i")
+        for (i in 1..4 step 2) {
+            Log.e("lin", "i = $i")
         }
-        for (i in 4 downTo 4 ){
-            Log.e("lin","i = $i")
+        for (i in 4 downTo 4) {
+            Log.e("lin", "i = $i")
         }
-        for (i in 1 until 4 ){
-            Log.e("lin","i = $i")
+        for (i in 1 until 4) {
+            Log.e("lin", "i = $i")
         }
     }
 }

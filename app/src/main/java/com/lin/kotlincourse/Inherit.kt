@@ -81,6 +81,7 @@ interface B {
 }
 
 class C() : A(), B {
+
     override val a: Int = 2//重写属性
     override fun f() {
         super<A>.f()//调用A的f()

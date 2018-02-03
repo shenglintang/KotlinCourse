@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.ArrayAdapter
+import android.widget.ListAdapter
 import android.widget.ListView
 
 class MainActivity : ListActivity() {
@@ -44,21 +45,27 @@ class MainActivity : ListActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        listAdapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, mTitles)
+        listAdapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, mTitles) as ListAdapter?
         var classAndObject = ClassAndObject()
-        classAndObject.age =2
+        classAndObject.age = 2
         classAndObject.name = "tomdd"
 //        Log.e("lin", "age is ${classAndObject.age} ")
 //        Log.e("lin", "age is ${classAndObject.name} ")
 //      val classAndObject2 = ClassAndObject.ClassAndObject("lin",12)
 //        classAndObject2.text1()
-        val classAndObject3 = ClassAndObject.ClassAndObject("ALLEN",11,1)
+        val classAndObject3 = ClassAndObject.ClassAndObject("ALLEN", 11, 1)
 
-
+//        SingletonDemo.text()
+        lazySingleton.instances.text()
+        LogUtil.e(lazySingleton.instances.toString())
+        LogUtil.e(lazySingleton.instances.toString())
+        StaticClassDemo.showMessage()
     }
-fun usage(user: User){
-    user.log()
-}
+
+    fun usage(user: User) {
+        user.log()
+    }
+
     override fun onListItemClick(l: ListView, v: View, position: Int, id: Long) {
         startActivity(Intent(this, mActivities[position]))
     }
