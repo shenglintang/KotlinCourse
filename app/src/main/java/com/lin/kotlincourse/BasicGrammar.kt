@@ -49,6 +49,17 @@ class BasicGrammar : AppCompatActivity() {
     }
 
     /**
+     * 默认参数
+     * 参数有默认值的话，我们可以不传这个参数
+     */
+    fun reformat(str: String,
+                 normalizeCase: Boolean = true,
+                 upperCaseFirstLetter: Boolean = true,
+                 divideByCamelHumps: Boolean = false,
+                 wordSeparator: String = "bbb") {
+    }
+
+    /**
      * 表达式作为函数体，返回类型由kotlin自动判断
      */
     fun textFun4(a: Int, b: Int) = a + b
