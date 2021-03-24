@@ -14,7 +14,6 @@ class Inherit : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_inherit)
         val student = Student("lin", 12, 1)
-
         Log.e("lin", "${student.name}")
         Log.e("lin", "${student.age}")
         Log.e("lin", "${student.sex}")

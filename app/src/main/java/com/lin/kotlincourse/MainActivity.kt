@@ -3,6 +3,7 @@ package com.lin.kotlincourse
 import android.app.ListActivity
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.ListAdapter
@@ -22,7 +23,8 @@ class MainActivity : ListActivity() {
             GenericParadigm::class.java!!.simpleName,
             EnumClass::class.java!!.simpleName,
             ObjectExpressionsAndObjectDeclarations::class.java!!.simpleName,
-            Entrust::class.java!!.simpleName
+            Entrust::class.java!!.simpleName,
+            CoroutineActivity::class.java!!.simpleName
     )
 
 
@@ -39,7 +41,8 @@ class MainActivity : ListActivity() {
             GenericParadigm::class.java,
             EnumClass::class.java,
             ObjectExpressionsAndObjectDeclarations::class.java,
-            Entrust::class.java
+            Entrust::class.java,
+            CoroutineActivity::class.java
 
     )
 
@@ -47,10 +50,10 @@ class MainActivity : ListActivity() {
         super.onCreate(savedInstanceState)
         listAdapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, mTitles) as ListAdapter?
         var classAndObject = ClassAndObject()
-        classAndObject.age = 2
-        classAndObject.name = "tomdd"
-//        Log.e("lin", "age is ${classAndObject.age} ")
-//        Log.e("lin", "age is ${classAndObject.name} ")
+        classAndObject.age = 1
+        classAndObject.name = "ddd"
+        Log.e("lin", "age is ${classAndObject.age} ")
+        Log.e("lin", "name is ${classAndObject.name} ")
 //      val classAndObject2 = ClassAndObject.ClassAndObject("lin",12)
 //        classAndObject2.text1()
         val classAndObject3 = ClassAndObject.ClassAndObject("ALLEN", 11, 1)

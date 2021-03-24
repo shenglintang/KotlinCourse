@@ -167,7 +167,7 @@ fun EntrustText5() {
     // 需要注意，如果属性在赋值前就被访问的话则会抛出异常。
     // Property notNullBar should be initialized before get.
     val entrustFoo = EntrustFoo()
-    entrustFoo.notNullBar = "aaa"
+    entrustFoo.notNullBar = "ss"
     LogUtil.e(entrustFoo.notNullBar)
 }
 

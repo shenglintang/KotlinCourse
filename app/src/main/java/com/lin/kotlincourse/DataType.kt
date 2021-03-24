@@ -17,9 +17,13 @@ class DataType : AppCompatActivity() {
 //        text1()
 //        text2()
 //        text3()
-//        text5()
-
+        text5()
+//
         text6()
+
+        //区间
+        val range = 1..23
+
     }
 
     /**
@@ -33,8 +37,6 @@ class DataType : AppCompatActivity() {
         val c: Int? = a
         Log.e("lin", "c==b is ${c == b}")//经过装箱之后值都是1000 返回true
         Log.e("lin", "c===b is ${c === b}")//经过装箱之后创建了2个对象，地址不一样 false
-        // 需要注意的是：
-        // 需要注意的是：
         // 需要注意的是：
         //JVM虚拟机中维护着有符号整形常量池（-128,127），
         //在这个范围里的数值都会直接使用常量池的内存地址，
@@ -106,7 +108,7 @@ class DataType : AppCompatActivity() {
         var a = arrayOf(1, 2, 3)
         Log.e("lin", " a[0] is ${a[0]}")
         var b = Array(3, { i -> (i * 2) })
-        Log.e("lin", " b[1] is ${b[1]}")
+        Log.e("lin", " b[1] is ${b[2]}")
 //除了类Array，还有ByteArray, ShortArray, IntArray，
 // 用来表示各个类型的数组，
 // 省去了装箱操作，因此效率更高

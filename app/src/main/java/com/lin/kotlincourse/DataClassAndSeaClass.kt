@@ -12,7 +12,7 @@ class DataClassAndSeaClass : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_data_class_and_sea_class)
 //        text()
-//        text2()
+        text2()
 
         LogUtil.e("eval(Const) is  ${eval(Const(11.0))}")
         LogUtil.e("eval(NotNumber) is  ${eval(NotNumber)}")

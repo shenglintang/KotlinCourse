@@ -3,6 +3,7 @@ package com.lin.kotlincourse
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
+import kotlin.math.log
 
 /**
  * 基础语法
@@ -19,16 +20,28 @@ class BasicGrammar : AppCompatActivity() {
     //声明常量 必须在top-level和object中。
     companion object {
         const val age = 1
+        /**
+         * 相当于Java的static
+         */
+        var SUCCESS_CHANGE = "CHANGE";
+
+        /**
+         * 相当于Java的 public final static
+         */
+        const val SUCCESS_PUBLIC = "PUBLIC"
+
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_basic_grammar)
+        Log.i("TAG", "onCreate: age:$age,sex:$sex")
         textFun5(1, 2, 3)
         textFun6()
         textFun8()
         textFun9()
         textFun10()
+        reformat(name,false,false,false, name)
     }
 
     /**
@@ -42,10 +55,7 @@ class BasicGrammar : AppCompatActivity() {
     /**
      * 当没有返回值时可以返回值类型为Unit或者省略不写
      */
-    fun textFun2(str: String): Unit {
-    }
-
-    fun textFun3(str: String) {
+    fun textFun2(str: String) {
     }
 
     /**
@@ -57,6 +67,7 @@ class BasicGrammar : AppCompatActivity() {
                  upperCaseFirstLetter: Boolean = true,
                  divideByCamelHumps: Boolean = false,
                  wordSeparator: String = "bbb") {
+        Log.e("lin", "wordSeparator is $wordSeparator")
     }
 
     /**
@@ -90,7 +101,7 @@ class BasicGrammar : AppCompatActivity() {
      */
     fun textFun7() {
         var a = 1
-        var b: String = "b"
+        var b = "b"
         val c = false
 //        c =true //c不可变量此段编译不过
 
@@ -103,7 +114,7 @@ class BasicGrammar : AppCompatActivity() {
      * ${varName.fun()}表示方法返回值
      */
     fun textFun8() {
-        var a = 1
+        val a = 1
         Log.e("lin", "a is $a")
         Log.e("lin", "textFun4 is ${textFun4(1, 2)}")
     }
@@ -125,6 +136,7 @@ class BasicGrammar : AppCompatActivity() {
         Log.e("lin", "c is $c")
 
         var d = a?.toInt() ?: "3"//为空则默认为3
+
         Log.e("lin", "d is $d")
     }
 

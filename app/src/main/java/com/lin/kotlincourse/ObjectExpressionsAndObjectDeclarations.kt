@@ -13,8 +13,8 @@ class ObjectExpressionsAndObjectDeclarations : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_object_expressions_and_object_declarations)
-//        text4()
-//        text5()
+        text4()
+        text5()
         textR()
         val instance = CompanionClazz.create()
     }

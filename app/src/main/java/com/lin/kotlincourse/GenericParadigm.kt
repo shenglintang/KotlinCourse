@@ -50,7 +50,7 @@ fun <T> boxIn(value: T) = Box(value)
  * 使用out使得一个类型参数协变，协变类型参数只能用作输出，可以作为返回值类型，不可作为入参类型
  */
 class OutClazz<out T>(val t: T) {
-    //    fun text( t: T):T{//错误 只能当做返回类型 不能作为入参类型
+//        fun text( t: T):T{//错误 只能当做返回类型 不能作为入参类型
 //        return t
 //    }
     fun text(): T {

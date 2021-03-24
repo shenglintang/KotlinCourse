@@ -48,23 +48,23 @@ class CycleControl : AppCompatActivity() {
     fun text2() {
         var array = arrayOf(1, 2, 3)
         for (item in array) {
-            if (item == 2) break
-//            if (item == 2) continue
-//            Log.e("lin", "item is $item")
+//            if (item == 2) break
+            if (item == 2) continue
+            Log.e("lin", "item0 is $item")
         }
         val items = listOf("apple", "banana", "kiwi")
-        items.forEach{
+       /* items.forEach{
             if (it.equals("banana")) return//加上了return标签，将会从最外层函数返回 后面的语句将不执行
-            Log.e("lin", "it is $it")
-        }
+            Log.e("lin", "it1 is $it")
+        }*/
         items.forEach{
             if (it.equals("banana")) return@forEach//加上了@forEach标签，只会从表达式中返回，该标签与函数名相同
-            Log.e("lin", "it is $it")
+            Log.e("lin", "it2 is $it")
         }
 
         items.forEach(fun (value :String){
             if (value.equals("banana")) return//匿名函数内部的 return 语句将从该匿名函数自身返回
-            Log.e("lin", "it is $value")
+            Log.e("lin", "it3 is $value")
         })
 
     }
