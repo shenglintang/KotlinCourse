@@ -14,22 +14,41 @@ package com.lin.kotlincourse
 //}
 
 /**
- * 懒汉式单例
- * 显式声明构造方法为private
- * companion object用来在class内部声明一个对象
- * LazySingleton的实例instance 通过lazy来实现懒汉式加载
- * lazy默认情况下是线程安全的，这就可以避免多个线程同时访问生成多个实例的问题
+ * 饿汉式单例模式
  */
-class lazySingleton private constructor() {
+//object SingletonDemo1
+
+//懒汉式
+/*class SingletonDemo2 private constructor() {
     companion object {
-        val instances by lazy {
-            lazySingleton()
+        private var instance: SingletonDemo2? = null
+            get() {
+                if (field == null) {
+                    field = SingletonDemo2()
+                }
+                return field
+            }
+
+        //这里不用getInstance作为为方法名，是因为在伴生对象声明时，
+        // 内部已有getInstance方法，所以只能取其他名字
+        fun getSingletonDemo2(): SingletonDemo2 {
+            return instance!!
         }
     }
-    fun text(){
-        LogUtil.e("text()")
+}*/
+
+//双重校验锁式单例
+class SingletonDemo() {
+    companion object {
+        val instance: SingletonDemo by lazy(mode = LazyThreadSafetyMode.SYNCHRONIZED) {
+            SingletonDemo()
+        }
     }
 }
+
+
+
+
 
 
 
