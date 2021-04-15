@@ -8,11 +8,19 @@ import kotlinx.coroutines.*
  * 协程:本质是轻量级的线程
  */
 class CoroutineActivity : AppCompatActivity() {
-
+val scope= MainScope()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_coroutine)
         GlobalScope.launch { text7() }
+
+        scope.launch {
+            text5()
+        }
+
+        CoroutineScope(Dispatchers.Default).launch {
+            text5()
+        }
     }
 
     /**
@@ -85,7 +93,7 @@ class CoroutineActivity : AppCompatActivity() {
      * 协程的取消是 协作 的
      * 如果协程正在执行计算任务，并且没有检查取消的话，那么它是不能被取消的，
      */
-    suspend fun text5() {
+    suspend fun text5()= withContext(Dispatchers.IO) {
         val job = GlobalScope.launch {
             repeat(1000) { i ->
                 println("job: I'm sleeping $i ...")

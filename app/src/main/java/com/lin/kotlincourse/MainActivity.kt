@@ -59,9 +59,6 @@ class MainActivity : ListActivity() {
         val classAndObject3 = ClassAndObject.ClassAndObject("ALLEN", 11, 1)
 
 //        SingletonDemo.text()
-        lazySingleton.instances.text()
-        LogUtil.e(lazySingleton.instances.toString())
-        LogUtil.e(lazySingleton.instances.toString())
         StaticClassDemo.showMessage()
     }
 
