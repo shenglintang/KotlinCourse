@@ -107,7 +107,7 @@ class DataType : AppCompatActivity() {
     fun text5() {
         var a = arrayOf(1, 2, 3)
         Log.e("lin", " a[0] is ${a[0]}")
-        var b = Array(3, { i -> (i * 2) })
+        var b = Array(3) { i -> (i * 2) }
         Log.e("lin", " b[1] is ${b[2]}")
 //除了类Array，还有ByteArray, ShortArray, IntArray，
 // 用来表示各个类型的数组，
